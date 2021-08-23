@@ -17,6 +17,7 @@ public class TipoAlimento implements Serializable
 	String nomeTipoAlimento;
 	
 	// Construtor vazio:
+	// Teste de comentário
 	
 	public TipoAlimento()
 	{
