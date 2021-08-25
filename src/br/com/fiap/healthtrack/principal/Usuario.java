@@ -24,7 +24,8 @@ public class Usuario implements Serializable
 	
 	// Construtor vazio:
 	
-	public Usuario() {
+	public Usuario()
+	{
 
 	}
 	
@@ -144,7 +145,7 @@ public class Usuario implements Serializable
 	{
 		boolean exclusaoUsuarioFinalizada = false;
 		
-		
+		System.out.println("Conta excluída com sucesso");
 		
 		exclusaoUsuarioFinalizada = true;
 		
@@ -155,12 +156,29 @@ public class Usuario implements Serializable
 	{
 		boolean loginBemSucedido = false;
 		
+		if(this.email == email)
+		{
+			if(this.senha == senha)
+			{
+				System.out.println("Login bem sucedido");
+				loginBemSucedido = true;
+			}
+			else
+			{
+				System.out.println("Senha inválida");
+			}
+		}
+		else
+		{
+			System.out.println("Usuário não encontrado");
+		}
+		
 		return loginBemSucedido;
 	}
 
 	public void fazerLogout()
 	{
-	
+		System.out.println("Logout feito com sucesso");
 	}
 	
 	public String calcularIdade(Date dataNascimento)
