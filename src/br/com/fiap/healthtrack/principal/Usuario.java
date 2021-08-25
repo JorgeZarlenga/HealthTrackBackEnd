@@ -2,6 +2,7 @@ package br.com.fiap.healthtrack.principal;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 public class Usuario implements Serializable
 {
@@ -27,7 +28,7 @@ public class Usuario implements Serializable
 
 	}
 	
-	// Mï¿½todos getters and setters:
+	// Métodos getters and setters:
 	
 	public int getCodUsuario()
 	{
@@ -99,8 +100,12 @@ public class Usuario implements Serializable
 		this.email = email;
 	}
 	
-	// Mï¿½todos:
+	// Métodos:
 	
+	/**
+	 * @author Jorge
+	 * Teste
+	 */
 	public boolean cadastrarUsuario(String primeiroNome, String sobrenome, Date dataNascimento, char genero, float altura, String email, String senha)
 	{
 		boolean cadastroUsuarioFinalizado = false;
