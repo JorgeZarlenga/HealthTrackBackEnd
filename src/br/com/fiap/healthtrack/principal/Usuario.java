@@ -4,15 +4,14 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-public class Usuario implements Serializable
-{
+public class Usuario implements Serializable {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	// Atributos:
-	
+
 	private int codUsuario;
 	private String primeiroNome;
 	private String sobrenome;
@@ -21,96 +20,80 @@ public class Usuario implements Serializable
 	private float altura;
 	private String email;
 	private String senha;
-	
+
 	// Construtor vazio:
-	
-	public Usuario()
-	{
+
+	public Usuario() {
 
 	}
-	
-	// Métodos getters and setters:
-	
-	public int getCodUsuario()
-	{
+
+	// Mï¿½todos getters and setters:
+
+	public int getCodUsuario() {
 		return codUsuario;
 	}
 
-	public void setCodUsuario(int codUsuario)
-	{
+	public void setCodUsuario(int codUsuario) {
 		this.codUsuario = codUsuario;
 	}
 
-	public String getPrimeiroNome()
-	{
+	public String getPrimeiroNome() {
 		return primeiroNome;
 	}
 
-	public void setPrimeiroNome(String primeiroNome)
-	{
+	public void setPrimeiroNome(String primeiroNome) {
 		this.primeiroNome = primeiroNome;
 	}
 
-	public String getSobrenome()
-	{
+	public String getSobrenome() {
 		return sobrenome;
 	}
 
-	public void setSobrenome(String sobrenome)
-	{
+	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
 	}
 
-	public Date getDataNascimento()
-	{
+	public Date getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(Date dataNascimento)
-	{
+	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 
-	public char getGenero()
-	{
+	public char getGenero() {
 		return genero;
 	}
 
-	public void setGenero(char genero)
-	{
+	public void setGenero(char genero) {
 		this.genero = genero;
 	}
 
-	public float getAltura()
-	{
+	public float getAltura() {
 		return altura;
 	}
 
-	public void setAltura(float altura)
-	{
+	public void setAltura(float altura) {
 		this.altura = altura;
 	}
 
-	public String getEmail()
-	{
+	public String getEmail() {
 		return email;
 	}
 
-	public void setEmail(String email)
-	{
+	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	// Métodos:
-	
+
+	// Mï¿½todos:
+
 	/**
-	 * @author Jorge
-	 * Teste
+	 * @author Jorge Teste
 	 */
-	public boolean cadastrarUsuario(String primeiroNome, String sobrenome, Date dataNascimento, char genero, float altura, String email, String senha)
-	{
+	public boolean cadastrarUsuario(String primeiroNome, String sobrenome, Date dataNascimento, char genero,
+			float altura, String email, String senha) {
 		boolean cadastroUsuarioFinalizado = false;
-		
+
 		this.primeiroNome = primeiroNome;
 		this.sobrenome = sobrenome;
 		this.dataNascimento = dataNascimento;
@@ -118,16 +101,16 @@ public class Usuario implements Serializable
 		this.altura = altura;
 		this.email = email;
 		this.senha = senha;
-		
+
 		cadastroUsuarioFinalizado = true;
-		
+
 		return cadastroUsuarioFinalizado;
 	}
-	
-	public boolean editarDadosUsuario(String primeiroNome, String sobrenome, Date dataNascimento, char genero, float altura, String email, String senha)
-	{
+
+	public boolean editarDadosUsuario(String primeiroNome, String sobrenome, Date dataNascimento, char genero,
+			float altura, String email, String senha) {
 		boolean edicaoUsuarioFinalizada = false;
-		
+
 		this.primeiroNome = primeiroNome;
 		this.sobrenome = sobrenome;
 		this.dataNascimento = dataNascimento;
@@ -135,56 +118,46 @@ public class Usuario implements Serializable
 		this.altura = altura;
 		this.email = email;
 		this.senha = senha;
-		
+
 		edicaoUsuarioFinalizada = true;
-		
+
 		return edicaoUsuarioFinalizada;
 	}
-	
-	public boolean excluirUsuario(int codUsuario)
-	{
+
+	public boolean excluirUsuario(int codUsuario) {
 		boolean exclusaoUsuarioFinalizada = false;
-		
-		System.out.println("Conta excluída com sucesso");
-		
+
+		System.out.println("Conta excluï¿½da com sucesso");
+
 		exclusaoUsuarioFinalizada = true;
-		
+
 		return exclusaoUsuarioFinalizada;
 	}
-	
-	public boolean fazerLogin(String email, String senha)
-	{
+
+	public boolean fazerLogin(String email, String senha) {
 		boolean loginBemSucedido = false;
-		
-		if(this.email == email)
-		{
-			if(this.senha == senha)
-			{
+
+		if (this.email == email) {
+			if (this.senha == senha) {
 				System.out.println("Login bem sucedido");
 				loginBemSucedido = true;
+			} else {
+				System.out.println("Senha invï¿½lida");
 			}
-			else
-			{
-				System.out.println("Senha inválida");
-			}
+		} else {
+			System.out.println("Usuï¿½rio nï¿½o encontrado");
 		}
-		else
-		{
-			System.out.println("Usuário não encontrado");
-		}
-		
+
 		return loginBemSucedido;
 	}
 
-	public void fazerLogout()
-	{
+	public void fazerLogout() {
 		System.out.println("Logout feito com sucesso");
 	}
-	
-	public String calcularIdade(Date dataNascimento)
-	{
+
+	public String calcularIdade(Date dataNascimento) {
 		String idadeString = "";
-		
+
 		return idadeString;
-	}	
+	}
 }
