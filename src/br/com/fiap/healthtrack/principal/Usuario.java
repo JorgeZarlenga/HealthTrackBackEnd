@@ -4,6 +4,11 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Classe que abstrai um Usuário
+ * @author Dionney Saraiva, Jorge Zarlenga, Maria Eduarda e Rodrigo Valori
+ * @version 1.0
+ */
 public class Usuario implements Serializable {
 	/**
 	 * 
@@ -12,13 +17,44 @@ public class Usuario implements Serializable {
 
 	// Atributos:
 
+	/**
+	 * Código identificador do usuário
+	 */
 	private int codUsuario;
+	
+	/**
+	 * Primeiro nome do usuário
+	 */
 	private String primeiroNome;
+
+	/**
+	 * Sobrenome do usuário
+	 */
 	private String sobrenome;
+	
+	/**
+	 * Data de nascimento do usuário
+	 */
 	private Date dataNascimento;
+	
+	/**
+	 * Gênero do usuário
+	 */
 	private char genero;
+	
+	/**
+	 * Altura do usuário (em metros)
+	 */
 	private float altura;
+	
+	/**
+	 * Email do usuário
+	 */
 	private String email;
+	
+	/**
+	 * Senha do usuário
+	 */
 	private String senha;
 
 	// Construtor vazio:
@@ -88,7 +124,14 @@ public class Usuario implements Serializable {
 	// Mï¿½todos:
 
 	/**
-	 * @author Jorge Teste
+	 * Faz o cadastro do usuário
+	 * @param Primeiro nome do usuário
+	 * @param Sobrenome do usuário
+	 * @param Data de nascimento do usuário
+	 * @param Gênero do usuário
+	 * @param Altura do usuário (em metros)
+	 * @param Email do usuário
+	 * @param Senha do usuário
 	 */
 	public boolean cadastrarUsuario(String primeiroNome, String sobrenome, Date dataNascimento, char genero,
 			float altura, String email, String senha) {
@@ -101,12 +144,24 @@ public class Usuario implements Serializable {
 		this.altura = altura;
 		this.email = email;
 		this.senha = senha;
+		
+		System.out.println("Usuário cadastrado com sucesso");
 
 		cadastroUsuarioFinalizado = true;
 
 		return cadastroUsuarioFinalizado;
 	}
 
+	/**
+	 * Edita os dados pessoais do usuário
+	 * @param Primeiro nome do usuário
+	 * @param Sobrenome do usuário
+	 * @param Data de nascimento do usuário
+	 * @param Gênero do usuário
+	 * @param Altura do usuário (em metros)
+	 * @param Email do usuário
+	 * @param Senha do usuário
+	 */
 	public boolean editarDadosUsuario(String primeiroNome, String sobrenome, Date dataNascimento, char genero,
 			float altura, String email, String senha) {
 		boolean edicaoUsuarioFinalizada = false;
@@ -123,7 +178,11 @@ public class Usuario implements Serializable {
 
 		return edicaoUsuarioFinalizada;
 	}
-
+	
+	/**
+	 * Exclui o cadastro do usuário
+	 * @param Código identificador do usuário
+	 */
 	public boolean excluirUsuario(int codUsuario) {
 		boolean exclusaoUsuarioFinalizada = false;
 
@@ -134,6 +193,11 @@ public class Usuario implements Serializable {
 		return exclusaoUsuarioFinalizada;
 	}
 
+	/**
+	 * Efetua a operação de login
+	 * @param Email do usuário
+	 * @param Senha do usuário
+	 */
 	public boolean fazerLogin(String email, String senha) {
 		boolean loginBemSucedido = false;
 
@@ -151,10 +215,17 @@ public class Usuario implements Serializable {
 		return loginBemSucedido;
 	}
 
+	/**
+	 * Efetua a operação de logout
+	 */
 	public void fazerLogout() {
 		System.out.println("Logout feito com sucesso");
 	}
 
+	/**
+	 * Calcula a idade para exibição na dashboard
+	 * @param Data de nascimento do usuário
+	 */
 	public String calcularIdade(Date dataNascimento) {
 		String idadeString = "";
 

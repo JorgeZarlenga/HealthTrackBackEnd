@@ -27,7 +27,7 @@ public class Alimento implements Serializable {
 
 	}
 
-	// Mï¿½todos getters and setters:
+	// Métodos getters and setters:
 
 	public int getCodAlimento() {
 		return codAlimento;
@@ -69,19 +69,19 @@ public class Alimento implements Serializable {
 		this.descricaoAlimento = descricaoAlimento;
 	}
 
-	// Mï¿½todos:
+	// Métodos:
 
 	public boolean cadastrarAlimento(Date dataHoraAlimento, String nomeAlimento, float energiaKcalAlimento,
 			String descricaoAlimento) {
 		boolean cadastroPesoFinalizado = false;
 
 		return cadastroPesoFinalizado;
-
 	}
 
 	public ArrayList<Alimento> consultarAlimento(Date dataHoraAlimento) {
 		ArrayList<Alimento> listaAlimentos = new ArrayList<>();
-
+		
+		
 		return listaAlimentos;
 	}
 

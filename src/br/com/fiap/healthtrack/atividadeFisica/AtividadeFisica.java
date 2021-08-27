@@ -4,6 +4,11 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * Classe que abstrai o registro de Atividade Física
+ * @author Dionney Saraiva, Jorge Zarlenga, Maria Eduarda e Rodrigo Valori
+ * @version 1.0
+ */
 public class AtividadeFisica implements Serializable {
 
 	/**
