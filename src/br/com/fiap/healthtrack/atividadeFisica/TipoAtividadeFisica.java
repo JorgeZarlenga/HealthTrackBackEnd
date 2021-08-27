@@ -3,6 +3,11 @@ package br.com.fiap.healthtrack.atividadeFisica;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * Classe que abstrai o tipo de Atividade Fisica
+ * @author Dionney Saraiva, Jorge Zarlenga, Maria Eduarda e Rodrigo Valori
+ * @version 1.0
+ */
 public class TipoAtividadeFisica implements Serializable {
 	/**
 	 * 

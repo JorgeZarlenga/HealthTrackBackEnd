@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 /**
- * Classe que abstrai o registro de Atividade Física
+ * Classe que abstrai o registro de Atividade Fisica
  * @author Dionney Saraiva, Jorge Zarlenga, Maria Eduarda e Rodrigo Valori
  * @version 1.0
  */
@@ -18,10 +18,29 @@ public class AtividadeFisica implements Serializable {
 
 	// Atributos:
 
+	/**
+	 * Código identificador do registro de atividade fisica
+	 */
 	int codAtividadeFisica;
+	
+	/**
+	 * Valor de energia (em kcal) de um registro de atividade fisica
+	 */
 	float energiaKcalAtividadeFisica;
+	
+	/**
+	 * Data e hora de inicio de um registro de atividade fisica
+	 */
 	Date dataHoraInicioAtividadeFisica;
+	
+	/**
+	 * Data e hora de término de um registro de atividade fisica
+	 */
 	Date dataHoraTerminoAtividadeFisica;
+	
+	/**
+	 * Descrição (texto livre) de um registro de atividade fisica
+	 */
 	String descricaoAtividadeFisica;
 
 	// Construtor vazio:
@@ -30,7 +49,7 @@ public class AtividadeFisica implements Serializable {
 
 	}
 
-	// Mï¿½todos getters and setters:
+	// Metodos getters and setters:
 
 	public int getCodAtividadeFisica() {
 		return codAtividadeFisica;
@@ -72,27 +91,51 @@ public class AtividadeFisica implements Serializable {
 		this.descricaoAtividadeFisica = descricaoAtividadeFisica;
 	}
 
-	// Mï¿½todos:
-
-	public boolean cadastrarAtividadeFisica(int codAtividadeFisica, Date dataHoraInicioAtividadeFisica,
+	// Metodos:
+	
+	/**
+	 * Faz o cadastro de um registro de atividade física
+	 * @param Data e hora de início de um registro de atividade física
+	 * @param Data e hora de término de um registro de atividade física
+	 * @param Valor de energia (em kcal) de um registro de atividade física
+	 * @param Descrição (texto livre) de um registro de atividade física
+	 */
+	public boolean cadastrarAtividadeFisica(Date dataHoraInicioAtividadeFisica,
 			Date dataHoraTerminoAtividadeFisica, float energiaKcalAtividadeFisica, String descricaoAtividadeFisica) {
 		boolean cadastroAtividadeFisicaFinalizado = false;
 
 		return cadastroAtividadeFisicaFinalizado;
 	}
 
-	public ArrayList<AtividadeFisica> consultarAtividadeFisica(Date dataHoraAlimento) {
+	/**
+	 * Retorna uma listagem de registros de atividades físicas
+	 * @param Data para recuperação de registros de atividades físicas
+	 */
+	public ArrayList<AtividadeFisica> consultarAtividadeFisica(Date dataAtividadeFisica) {
 		ArrayList<AtividadeFisica> listaAtividadesFisicas = new ArrayList<>();
 
 		return listaAtividadesFisicas;
 	}
 
-	public boolean editarAtividadeFisica(int codAtividadeFisica) {
+	/**
+	 * Edita os dados de um registro de atividade física
+	 * @param Código identificador do registro de atividade fisica
+	 * @param Valor de energia (em kcal) de um registro de atividade física
+	 * @param Data e hora de início de um registro de atividade física
+	 * @param Data e hora de termino de um registro de atividade física
+	 * @param Descrição (texto livre) de um registro de atividade física
+	 */
+	public boolean editarAtividadeFisica(Date dataHoraInicioAtividadeFisica,
+			Date dataHoraTerminoAtividadeFisica, float energiaKcalAtividadeFisica, String descricaoAtividadeFisica) {
 		boolean edicaoAtividadeFisicaFinalizada = false;
 
 		return edicaoAtividadeFisicaFinalizada;
 	}
 
+	/**
+	 * Exclui o registro de atividade física
+	 * @param Codigo identificador do registro de atividade física
+	 */
 	public boolean excluirAtividadeFisica(int codAtividadeFisica) {
 		boolean exclusaoAtividadeFisica = false;
 

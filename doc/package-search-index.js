@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"br.com.fiap.healthtrack.principal"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"br.com.fiap.healthtrack.alimentacao"},{"l":"br.com.fiap.healthtrack.atividadeFisica"},{"l":"br.com.fiap.healthtrack.pesagem"},{"l":"br.com.fiap.healthtrack.principal"},{"l":"br.com.fiap.pressaoArterial"}];updateSearchResults();

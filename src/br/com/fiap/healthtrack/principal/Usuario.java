@@ -18,42 +18,42 @@ public class Usuario implements Serializable {
 	// Atributos:
 
 	/**
-	 * Código identificador do usuário
+	 * Codigo identificador do usuário
 	 */
 	private int codUsuario;
 	
 	/**
-	 * Primeiro nome do usuário
+	 * Primeiro nome do usuario
 	 */
 	private String primeiroNome;
 
 	/**
-	 * Sobrenome do usuário
+	 * Sobrenome do usuario
 	 */
 	private String sobrenome;
 	
 	/**
-	 * Data de nascimento do usuário
+	 * Data de nascimento do usuario
 	 */
 	private Date dataNascimento;
 	
 	/**
-	 * Gênero do usuário
+	 * Gênero do usuario
 	 */
 	private char genero;
 	
 	/**
-	 * Altura do usuário (em metros)
+	 * Altura do usuario (em metros)
 	 */
 	private float altura;
 	
 	/**
-	 * Email do usuário
+	 * Email do usuario
 	 */
 	private String email;
 	
 	/**
-	 * Senha do usuário
+	 * Senha do usuario
 	 */
 	private String senha;
 
@@ -124,14 +124,14 @@ public class Usuario implements Serializable {
 	// Mï¿½todos:
 
 	/**
-	 * Faz o cadastro do usuário
-	 * @param Primeiro nome do usuário
-	 * @param Sobrenome do usuário
-	 * @param Data de nascimento do usuário
-	 * @param Gênero do usuário
-	 * @param Altura do usuário (em metros)
-	 * @param Email do usuário
-	 * @param Senha do usuário
+	 * Faz o cadastro do usuario
+	 * @param Primeiro nome do usuario
+	 * @param Sobrenome do usuario
+	 * @param Data de nascimento do usuario
+	 * @param Gênero do usuario
+	 * @param Altura do usuario (em metros)
+	 * @param Email do usuario
+	 * @param Senha do usuario
 	 */
 	public boolean cadastrarUsuario(String primeiroNome, String sobrenome, Date dataNascimento, char genero,
 			float altura, String email, String senha) {
@@ -180,13 +180,13 @@ public class Usuario implements Serializable {
 	}
 	
 	/**
-	 * Exclui o cadastro do usuário
-	 * @param Código identificador do usuário
+	 * Exclui o cadastro do usuario
+	 * @param Código identificador do usuario
 	 */
 	public boolean excluirUsuario(int codUsuario) {
 		boolean exclusaoUsuarioFinalizada = false;
 
-		System.out.println("Conta excluï¿½da com sucesso");
+		System.out.println("Conta excluida com sucesso");
 
 		exclusaoUsuarioFinalizada = true;
 
@@ -194,9 +194,9 @@ public class Usuario implements Serializable {
 	}
 
 	/**
-	 * Efetua a operação de login
-	 * @param Email do usuário
-	 * @param Senha do usuário
+	 * Efetua a operaçao de login
+	 * @param Email do usuario
+	 * @param Senha do usuario
 	 */
 	public boolean fazerLogin(String email, String senha) {
 		boolean loginBemSucedido = false;
@@ -209,7 +209,7 @@ public class Usuario implements Serializable {
 				System.out.println("Senha invï¿½lida");
 			}
 		} else {
-			System.out.println("Usuï¿½rio nï¿½o encontrado");
+			System.out.println("Usuario nao encontrado");
 		}
 
 		return loginBemSucedido;

@@ -67,7 +67,7 @@ public class Peso implements Serializable {
 	// Mï¿½todos:
 
 	/**
-	 * Faz o cadastro de um peso
+	 * Faz o cadastro de um registro de peso
 	 * @param Data da pesagem
 	 * @param Peso (em quilos)
 	 */
@@ -78,7 +78,7 @@ public class Peso implements Serializable {
 	}
 	
 	/**
-	 * Retorna uma listagem de medições de peso (para exibição do histórico e cálculo da diferença na dashboard)
+	 * Retorna uma listagem de medições de peso (para exibição do historico e calculo da diferenca na dashboard)
 	 * @param Datas de pesagem
 	 */
 	public ArrayList<Peso> consultarPeso(ArrayList<Peso> datasPesagem) {
@@ -88,7 +88,7 @@ public class Peso implements Serializable {
 	}
 
 	/**
-	 * Edita os dados pessoais do usuário
+	 * Edita os dados pessoais do usuario
 	 * @param Data da pesagem
 	 * @param Peso (em quilos)
 	 */
@@ -100,7 +100,7 @@ public class Peso implements Serializable {
 
 	/**
 	 * Exclui o cadastro de peso
-	 * @param Código identificador da medição de peso
+	 * @param Codigo identificador da mediçao de peso
 	 */
 	public boolean excluirPeso(int codPesagem) {
 		boolean exclusaoPesoFinalizada = false;
