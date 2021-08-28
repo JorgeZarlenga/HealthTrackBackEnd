@@ -91,7 +91,7 @@ public class AtividadeFisica implements Serializable {
 		this.descricaoAtividadeFisica = descricaoAtividadeFisica;
 	}
 
-	// Metodos:
+	// Métodos:
 	
 	/**
 	 * Faz o cadastro de um registro de atividade física
@@ -102,6 +102,7 @@ public class AtividadeFisica implements Serializable {
 	 */
 	public boolean cadastrarAtividadeFisica(Date dataHoraInicioAtividadeFisica,
 			Date dataHoraTerminoAtividadeFisica, float energiaKcalAtividadeFisica, String descricaoAtividadeFisica) {
+		
 		boolean cadastroAtividadeFisicaFinalizado = false;
 
 		return cadastroAtividadeFisicaFinalizado;
@@ -112,6 +113,7 @@ public class AtividadeFisica implements Serializable {
 	 * @param Data para recuperação de registros de atividades físicas
 	 */
 	public ArrayList<AtividadeFisica> consultarAtividadeFisica(Date dataAtividadeFisica) {
+		
 		ArrayList<AtividadeFisica> listaAtividadesFisicas = new ArrayList<>();
 
 		return listaAtividadesFisicas;
@@ -127,6 +129,7 @@ public class AtividadeFisica implements Serializable {
 	 */
 	public boolean editarAtividadeFisica(Date dataHoraInicioAtividadeFisica,
 			Date dataHoraTerminoAtividadeFisica, float energiaKcalAtividadeFisica, String descricaoAtividadeFisica) {
+		
 		boolean edicaoAtividadeFisicaFinalizada = false;
 
 		return edicaoAtividadeFisicaFinalizada;
@@ -137,6 +140,7 @@ public class AtividadeFisica implements Serializable {
 	 * @param Codigo identificador do registro de atividade física
 	 */
 	public boolean excluirAtividadeFisica(int codAtividadeFisica) {
+		
 		boolean exclusaoAtividadeFisica = false;
 
 		return exclusaoAtividadeFisica;

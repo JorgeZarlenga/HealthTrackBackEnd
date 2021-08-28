@@ -1,8 +1,10 @@
 package br.com.fiap.healthtrack.principal;
 
 import java.io.Serializable;
-import java.util.Date;
-import java.util.List;
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 /**
  * Classe que abstrai um Usuário
@@ -33,19 +35,19 @@ public class Usuario implements Serializable {
 	private String sobrenome;
 	
 	/**
-	 * Data de nascimento do usuario
+	 * Data de nascimento do usuário
 	 */
-	private Date dataNascimento;
+	private GregorianCalendar dataNascimento;
 	
 	/**
-	 * Gênero do usuario
+	 * Gênero do usuário
 	 */
 	private char genero;
 	
 	/**
 	 * Altura do usuario (em metros)
 	 */
-	private float altura;
+	private double altura;
 	
 	/**
 	 * Email do usuario
@@ -63,7 +65,7 @@ public class Usuario implements Serializable {
 
 	}
 
-	// Mï¿½todos getters and setters:
+	// Métodos getters and setters:
 
 	public int getCodUsuario() {
 		return codUsuario;
@@ -89,11 +91,11 @@ public class Usuario implements Serializable {
 		this.sobrenome = sobrenome;
 	}
 
-	public Date getDataNascimento() {
+	public GregorianCalendar getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(Date dataNascimento) {
+	public void setDataNascimento(GregorianCalendar dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 
@@ -105,11 +107,11 @@ public class Usuario implements Serializable {
 		this.genero = genero;
 	}
 
-	public float getAltura() {
+	public double getAltura() {
 		return altura;
 	}
 
-	public void setAltura(float altura) {
+	public void setAltura(double altura) {
 		this.altura = altura;
 	}
 
@@ -121,22 +123,24 @@ public class Usuario implements Serializable {
 		this.email = email;
 	}
 
-	// Mï¿½todos:
+	// Métodos:
 
 	/**
-	 * Faz o cadastro do usuario
-	 * @param Primeiro nome do usuario
-	 * @param Sobrenome do usuario
-	 * @param Data de nascimento do usuario
-	 * @param Gênero do usuario
-	 * @param Altura do usuario (em metros)
-	 * @param Email do usuario
-	 * @param Senha do usuario
+	 * Faz o cadastro do usuário
+	 * @param primeiroNome do usuário
+	 * @param sobrenome
+	 * @param dataNascimento
+	 * @param genero do usuário
+	 * @param altura
+	 * @param email
+	 * @param senha
+	 * @return cadastroUsuarioFinalizado
 	 */
-	public boolean cadastrarUsuario(String primeiroNome, String sobrenome, Date dataNascimento, char genero,
-			float altura, String email, String senha) {
+	public boolean cadastrarUsuario(int codUsuario, String primeiroNome, String sobrenome, GregorianCalendar dataNascimento, char genero, double altura, String email, String senha) {
+		
 		boolean cadastroUsuarioFinalizado = false;
-
+		
+		this.codUsuario = 1;
 		this.primeiroNome = primeiroNome;
 		this.sobrenome = sobrenome;
 		this.dataNascimento = dataNascimento;
@@ -145,7 +149,28 @@ public class Usuario implements Serializable {
 		this.email = email;
 		this.senha = senha;
 		
-		System.out.println("Usuário cadastrado com sucesso");
+		// Verificações para adição do número '0' antes de dia e mês caso sejam menores do que 10:
+		
+		int diaNascimento = dataNascimento.get(Calendar.DAY_OF_MONTH);
+		int mesNascimento = dataNascimento.get(Calendar.MONTH);
+		String diaNasc;
+		String mesNasc;
+		
+		if (diaNascimento < 10) {
+			diaNasc = "0" + diaNascimento;
+		} else {
+			diaNasc = Integer.toString(diaNascimento);
+		}
+		
+		if (mesNascimento < 10) {
+			mesNasc = "0" + mesNascimento;
+		} else {
+			mesNasc = Integer.toString(mesNascimento);
+		}
+		
+		String dataNascCompleta = diaNasc + "/" + mesNasc + "/" + dataNascimento.get(Calendar.YEAR);
+		
+		System.out.printf("\nUsuário cadastrado com sucesso:\nNome: " + primeiroNome + "\nSobrenome: " + 			sobrenome + "\nData de nascimento: " + dataNascCompleta + "\nGênero: " + genero + "\nAltura: " + 			altura + " m"  + "\nEmail: " + email + "\n");
 
 		cadastroUsuarioFinalizado = true;
 
@@ -154,18 +179,19 @@ public class Usuario implements Serializable {
 
 	/**
 	 * Edita os dados pessoais do usuário
-	 * @param Primeiro nome do usuário
-	 * @param Sobrenome do usuário
-	 * @param Data de nascimento do usuário
-	 * @param Gênero do usuário
-	 * @param Altura do usuário (em metros)
-	 * @param Email do usuário
-	 * @param Senha do usuário
+	 * @param primeiroNome - Primeiro nome do usuário
+	 * @param sobrenome - Sobrenome do usuário
+	 * @param dataNascimento
+	 * @param genero
+	 * @param altura - Em metros
+	 * @param email
+	 * @param senha
 	 */
-	public boolean editarDadosUsuario(String primeiroNome, String sobrenome, Date dataNascimento, char genero,
-			float altura, String email, String senha) {
+	public boolean editarDadosUsuario(int codUsuario, String primeiroNome, String sobrenome, GregorianCalendar dataNascimento, char genero, double altura, String email, String senha) {
+		
 		boolean edicaoUsuarioFinalizada = false;
-
+		
+		this.codUsuario = 1;
 		this.primeiroNome = primeiroNome;
 		this.sobrenome = sobrenome;
 		this.dataNascimento = dataNascimento;
@@ -173,6 +199,29 @@ public class Usuario implements Serializable {
 		this.altura = altura;
 		this.email = email;
 		this.senha = senha;
+		
+		// Verificações para adição do número '0' antes de dia e mês caso sejam menores do que 10:
+		
+		int diaNascimento = dataNascimento.get(Calendar.DAY_OF_MONTH);
+		int mesNascimento = dataNascimento.get(Calendar.MONTH);
+		String diaNasc;
+		String mesNasc;
+		
+		if (diaNascimento < 10) {
+			diaNasc = "0" + diaNascimento;
+		} else {
+			diaNasc = Integer.toString(diaNascimento);
+		}
+		
+		if (mesNascimento < 10) {
+			mesNasc = "0" + mesNascimento;
+		} else {
+			mesNasc = Integer.toString(mesNascimento);
+		}
+		
+		String dataNascCompleta = diaNasc + "/" + mesNasc + "/" + dataNascimento.get(Calendar.YEAR);
+		
+		System.out.printf("\nDados do usuário editados com sucesso:\nNome: " + primeiroNome + "\nSobrenome: " + 			sobrenome + "\nData de nascimento: " + dataNascCompleta + "\nGênero: " + genero + "\nAltura: " + 			altura  + " m"  + "\nEmail: " + email + "\n");
 
 		edicaoUsuarioFinalizada = true;
 
@@ -180,13 +229,14 @@ public class Usuario implements Serializable {
 	}
 	
 	/**
-	 * Exclui o cadastro do usuario
-	 * @param Código identificador do usuario
+	 * Exclui o cadastro do usuário
+	 * @param codUsuario
 	 */
 	public boolean excluirUsuario(int codUsuario) {
+		
 		boolean exclusaoUsuarioFinalizada = false;
 
-		System.out.println("Conta excluida com sucesso");
+		System.out.println("\nConta excluída com sucesso.");
 
 		exclusaoUsuarioFinalizada = true;
 
@@ -194,22 +244,23 @@ public class Usuario implements Serializable {
 	}
 
 	/**
-	 * Efetua a operaçao de login
-	 * @param Email do usuario
-	 * @param Senha do usuario
+	 * Efetua a operação de login
+	 * @param email
+	 * @param senha
 	 */
 	public boolean fazerLogin(String email, String senha) {
+		
 		boolean loginBemSucedido = false;
 
 		if (this.email == email) {
 			if (this.senha == senha) {
-				System.out.println("Login bem sucedido");
+				System.out.println("\nLogin bem sucedido.");
 				loginBemSucedido = true;
 			} else {
-				System.out.println("Senha invï¿½lida");
+				System.out.println("\nSenha inválida.");
 			}
 		} else {
-			System.out.println("Usuario nao encontrado");
+			System.out.println("\nUsuário não encontrado.");
 		}
 
 		return loginBemSucedido;
@@ -219,15 +270,33 @@ public class Usuario implements Serializable {
 	 * Efetua a operação de logout
 	 */
 	public void fazerLogout() {
-		System.out.println("Logout feito com sucesso");
+		
+		System.out.println("\nLogout feito com sucesso.");
 	}
 
 	/**
-	 * Calcula a idade para exibição na dashboard
-	 * @param Data de nascimento do usuário
+	 * Calcula a idade para exibição no dashboard
+	 * @param dataNascimento
 	 */
-	public String calcularIdade(Date dataNascimento) {
-		String idadeString = "";
+	public String calcularIdade(GregorianCalendar dataNascimento) {
+		
+		String idadeString;
+		int anoNascimento = dataNascimento.get(Calendar.YEAR);
+		int mesNascimento = dataNascimento.get(Calendar.MONTH);
+		int diaNascimento = dataNascimento.get(Calendar.DAY_OF_MONTH);
+
+		LocalDate dataNasc = LocalDate.of(anoNascimento, mesNascimento, diaNascimento); // Ano, mês e dia
+
+		// Captura a data atual
+		LocalDate agora = LocalDate.now();
+		
+		// Cálculo da diferença entre as datas
+		Period diferenca = Period.between(dataNasc, agora);
+		
+		// Concatenação da frase para exibição
+		idadeString = "\nIdade: " + diferenca.getYears() + " anos, " + diferenca.getMonths() + " meses e " + 			diferenca.getDays() + " dias."; 
+		
+		System.out.println(idadeString);
 
 		return idadeString;
 	}

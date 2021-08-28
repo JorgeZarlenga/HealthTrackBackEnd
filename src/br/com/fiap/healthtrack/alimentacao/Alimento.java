@@ -4,8 +4,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
-import br.com.fiap.healthtrack.pesagem.Peso;
-
 public class Alimento implements Serializable {
 
 	/**
@@ -73,12 +71,14 @@ public class Alimento implements Serializable {
 
 	public boolean cadastrarAlimento(Date dataHoraAlimento, String nomeAlimento, float energiaKcalAlimento,
 			String descricaoAlimento) {
+		
 		boolean cadastroPesoFinalizado = false;
 
 		return cadastroPesoFinalizado;
 	}
 
 	public ArrayList<Alimento> consultarAlimento(Date dataHoraAlimento) {
+		
 		ArrayList<Alimento> listaAlimentos = new ArrayList<>();
 		
 		
@@ -86,12 +86,14 @@ public class Alimento implements Serializable {
 	}
 
 	public boolean editarAlimento(int codAlimento) {
+		
 		boolean edicaoAlimentoFinalizada = false;
 
 		return edicaoAlimentoFinalizada;
 	}
 
 	public boolean excluirAlimento(int codAlimento) {
+		
 		boolean exclusaoAlimentoFinalizada = false;
 
 		return exclusaoAlimentoFinalizada;

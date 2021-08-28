@@ -16,13 +16,12 @@ public class TipoAlimento implements Serializable {
 	String nomeTipoAlimento;
 
 	// Construtor vazio:
-	// Teste de comentï¿½rio
 
 	public TipoAlimento() {
 
 	}
 
-	// Mï¿½todos getters and setters:
+	// Métodos getters and setters:
 
 	public int getCodTipoAlimento() {
 		return codTipoAlimento;
@@ -40,7 +39,7 @@ public class TipoAlimento implements Serializable {
 		this.nomeTipoAlimento = nomeTipoAlimento;
 	}
 
-	// Mï¿½todos:
+	// Métodos:
 
 	public boolean cadastrarTipoAlimento(String nomeTipoAlimento) {
 		boolean cadastroTipoAlimentoFinalizado = false;

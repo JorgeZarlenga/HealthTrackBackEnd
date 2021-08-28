@@ -25,7 +25,7 @@ public class TipoAtividadeFisica implements Serializable {
 
 	}
 
-	// Mï¿½todos getters and setters:
+	// Métodos getters and setters:
 
 	public int getCodTipoAtividadeFisica() {
 		return codTipoAtividadeFisica;
@@ -43,7 +43,7 @@ public class TipoAtividadeFisica implements Serializable {
 		this.nomeTipoAtividadeFisica = nomeTipoAtividadeFisica;
 	}
 
-	// Mï¿½todos:
+	// Métodos:
 
 	public boolean cadastrarTipoAtividadeFisica(String nomeTipoAtividadeFisica) {
 		boolean cadastroTipoAtividadeFisicaFinalizado = false;
